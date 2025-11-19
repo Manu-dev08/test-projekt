@@ -1,0 +1,529 @@
+/* Osnova */
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #faf7f7;
+color: #333;
+}
+
+/* HERO SLIKA NA POČETKU */
+.hero {
+background: url('img/hero.jpg') center/cover no-repeat;
+height: 60vh;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+text-align: center;
+color: white;
+}
+
+/* tamni sloj preko slike da se tekst bolje vidi */
+.hero::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.35);
+}
+
+.hero-inner {
+position: relative;
+z-index: 2;
+}
+
+.hero-inner h1 {
+margin: 0;
+font-size: 56px;
+font-family: 'Playfair Display', serif;
+font-weight: 700;
+letter-spacing: 1px;
+text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+}
+
+
+.hero-inner p {
+margin-top: 10px;
+font-size: 22px;
+font-family: 'Lora', serif;
+font-style: italic;
+color: #f7f7f7;
+text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+.usluge-traka {
+background: #f7f0e6;
+border-top: 1px solid #e2d6c2;
+border-bottom: 1px solid #e2d6c2;
+padding: 12px 20px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 12px;
+}
+
+.usluga {
+font-family: 'Lora', serif;
+font-size: 14px;
+color: #5b4b37;
+padding: 6px 14px;
+border-radius: 999px;
+border: 1px solid #d4c2a4;
+background: #fbf7f1;
+white-space: nowrap;
+}
+
+.usluga:hover {
+background: #efe1cd;
+border-color: #c8b293;
+}
+
+/* NAVIGACIJA */
+.main-nav {
+background: #ffffff;
+box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+position: sticky;
+top: 0;
+z-index: 5;
+}
+
+.main-nav ul {
+list-style: none;
+margin: 0;
+padding: 10px 0;
+text-align: center;
+}
+
+.main-nav li {
+display: inline-block;
+margin: 0 15px;
+}
+
+.main-nav a {
+text-decoration: none;
+color: #444;
+font-family: 'Playfair Display', serif;
+font-size: 18px;
+padding: 8px 14px;
+position: relative;
+transition: 0.3s ease;
+}
+
+/* hover efekt – elegantna linija */
+.main-nav a::after {
+content: "";
+position: absolute;
+bottom: -4px;
+left: 50%;
+transform: translateX(-50%);
+width: 0;
+height: 2px;
+background: #b891a8;
+transition: 0.3s ease;
+}
+
+.main-nav a:hover::after {
+width: 60%;
+}
+
+.main-nav a:hover {
+color: #b891a8;
+}
+
+
+.main-nav a:hover {
+color: #b8325a;
+}
+
+/* SEKCIJE */
+.section {
+padding: 50px 5%;
+text-align: center;
+}
+
+/* tab-sekcije (one koje se pale na klik) */
+.tab-section {
+display: none;
+}
+
+.tab-section.active-section {
+display: block;
+}
+/* GRID SLIKE */
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 20px;
+justify-items: center;
+}
+
+.grid img {
+width: 100%;
+max-width: 380px;
+height: 220px;
+object-fit: cover;
+border-radius: 10px;
+box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+* SEKCIJE PO KATEGORIJAMA */
+.usluga-sekcija {
+max-width: 1100px;
+margin: 60px auto;
+padding: 20px;
+text-align: center;
+}
+
+.usluga-sekcija h2 {
+font-family: 'Cormorant Garamond', serif;
+font-size: 32px;
+font-weight: 600;
+color: #4b3f2f;
+margin-bottom: 20px;
+border-bottom: 1px solid #e8d9c8;
+display: inline-block;
+padding-bottom: 6px;
+}
+
+.usluga-sadrzaj {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+}
+
+.usluga-sadrzaj img {
+width: 100%;
+max-width: 480px;
+border-radius: 10px;
+box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.usluga-sadrzaj p {
+max-width: 750px;
+font-family: 'Lora', serif;
+font-size: 18px;
+color: #5e5240;
+line-height: 1.6;
+}
+/*.usluga-sekcija {
+display: none;
+} */
+/* FOOTER */
+footer {
+background: #f7f4ef;
+padding: 40px 0 20px;
+margin-top: 60px;
+}
+
+/* Glavni dio footera */
+.footer-container {
+display: flex;
+justify-content: center;
+gap: 50px;
+flex-wrap: wrap;
+text-align: center;
+margin-bottom: 20px;
+}
+
+.footer-item {
+display: flex;
+align-items: center;
+gap: 8px;
+font-family: 'Lora', serif;
+font-size: 16px;
+color: #6a5a42;
+}
+
+/* Ikone */
+.footer-icon {
+width: 18px;
+height: 18px;
+filter: brightness(0) saturate(100%) invert(40%) sepia(10%) saturate(250%) hue-rotate(10deg);
+opacity: 0.9;
+}
+
+/* Linkovi */
+.footer-item a {
+color: #6a5a42;
+text-decoration: none;
+font-weight: 600;
+}
+
+.footer-item a:hover {
+color: #a08d72;
+text-decoration: underline;
+}
+
+/* Donji dio footera */
+.footer-bottom {
+text-align: center;
+margin-top: 10px;
+}
+
+.footer-logo {
+width: 28px;
+opacity: 0.9;
+}
+
+.footer-copy {
+font-size: 14px;
+color: #777;
+font-family: 'Lora', serif;
+margin-top: 8px;
+}
+
+/* O NAMA sekcija – luksuzni stil */
+#onama h2 {
+font-family: 'Cormorant Garamond', serif; /* luksuzni font */
+font-size: 26px; /* manji, finiji */
+font-weight: 700; /* podebljano */
+letter-spacing: 0.6px; /* premium izgled */
+color: #2a2a2a;
+margin-bottom: 14px;
+position: relative;
+display: inline-block;
+padding-bottom: 6px;
+}
+
+/* zlatna linija */
+#onama h2::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 50px; /* uža, elegantna */
+height: 1.7px;
+background: linear-gradient(90deg, #d4af37, #f5d76e, #d4af37);
+border-radius: 3px;
+opacity: 0.95;
+}
+
+
+
+
+#onama p {
+font-family: 'Lora', serif;
+font-size: 18px;
+line-height: 1.7;
+color: #444;
+max-width: 800px;
+margin: 0 auto;
+}
+.main-nav {
+margin-bottom: 25px;
+}
+
+/* Skrivanje svih sekcija dok nisu kliknute */
+.tab-section {
+display: none;
+}
+
+/* Sekcija koja se prikazuje */
+.active-section {
+display: block;
+}
+
+/* Instagram vs. O nama, da ne skače lijevo */
+.section {
+padding: 40px 20px;
+text-align: center;
+}
+
+/* Grid za slike unutar sekcija */
+.grid {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+margin-bottom: 20px;
+}
+
+.grid img {
+width: 100%;
+max-width: 350px;
+height: 250px;
+object-fit: cover;
+border-radius: 10px;
+box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+footer {
+background: #f7f4ef;
+padding: 40px 20px;
+margin-top: 60px;
+}
+
+.footer-container {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+text-align: center;
+gap: 50px;
+margin-bottom: 20px;
+}
+
+.footer-item {
+display: flex;
+align-items: center;
+gap: 10px;
+font-family: 'Lora', serif;
+font-size: 18px;
+color: #444;
+}
+
+.footer-item a {
+color: #444;
+text-decoration: none;
+}
+
+.footer-icon {
+width: 24px;
+height: 24px;
+}
+.usluga-sekcija {
+display: none;
+padding: 50px 20px;
+text-align: center;
+}
+
+.usluga-sekcija.active-section {
+display: block;
+}
+
+.usluga-sadrzaj img {
+max-width: 260px;
+width: 80%;
+height: auto;
+border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+margin-bottom: 18px;
+}
+
+.usluga-sadrzaj p {
+font-size: 18px;
+max-width: 600px;
+margin: 0 auto;
+}
+.sekcija-nav {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.sekcija-nav button {
+background-color: #f5f0eb;
+border: 1px solid #ccc;
+padding: 8px 18px;
+margin: 4px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 15px;
+transition: 0.3s ease;
+}
+
+.sekcija-nav button:hover {
+background-color: #e2d9d1;
+border-color: #b49b8a;
+}
+
+.sekcija-nav button:active {
+transform: scale(0.97);
+}
+.sekcija-nav {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin: 12px 0 25px 0;
+}
+
+.sekcija-nav button {
+background-color: #f7f2ec;
+border: 1px solid #ccbdaa;
+padding: 8px 18px;
+border-radius: 20px;
+font-size: 15px;
+cursor: pointer;
+transition: 0.25s ease-in-out;
+}
+
+.sekcija-nav button:hover {
+background-color: #e6d8ca;
+transform: translateY(-2px);
+}
+
+.sekcija-nav button.active {
+background-color: #c7b19e;
+color: white;
+border-color: #a48c76;
+}
+.sekcija-nav {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin: 8px 0 24px 0;
+}
+
+.sekcija-nav button {
+background-color: #f7f2ec;
+border: 1px solid #ccbdaa;
+padding: 7px 16px;
+border-radius: 20px;
+font-size: 14px;
+cursor: pointer;
+transition: 0.25s ease-in-out;
+}
+
+.sekcija-nav button:hover {
+background-color: #e6d8ca;
+transform: translateY(-1px);
+}
+
+/* aktivno dugme – kad je sekcija otvorena */
+.sekcija-nav button.active {
+background-color: #c7b19e;
+color: #fff;
+border-color: #a48c76;
+}
+/* -------- MOBILNA VERZIJA -------- */
+@media (max-width: 768px) {
+
+.hero-inner h1 {
+font-size: 34px;
+}
+
+.hero-inner p {
+font-size: 18px;
+}
+
+/* gornja traka s uslugama da se može horizontalno skrolati */
+.usluge-traka {
+overflow-x: auto;
+white-space: nowrap;
+padding: 10px;
+}
+
+.usluga {
+display: inline-block;
+margin: 4px 6px;
+font-size: 13px;
+}
+
+/* slika u sekciji malo manja na mobu */
+.usluga-sadrzaj img {
+max-width: 220px;
+}
+
+/* footer u stupcima ispod sebe */
+.footer-container {
+flex-direction: column;
+gap: 10px;
+}
+
+.footer-item {
+justify-content: center;
+}
+}

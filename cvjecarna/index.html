@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cvjećarna Flora</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+<div class="hero-inner">
+<h1>Cvjećarna Flora</h1>
+<p>Najljepši buketi za svaku priliku</p>
+</div>
+</header>
+
+<!-- GORNJE KATEGORIJE -->
+<div class="usluge-traka">
+<div class="usluga" onclick="showSection('bozicne')">Dekoracije Božićne / Novogodišnje</div>
+<div class="usluga" onclick="showSection('svadbe')">Dekoracije za svadbe</div>
+<div class="usluga" onclick="showSection('krstenja')">Dekoracije za krštenja</div>
+<div class="usluga" onclick="showSection('buketi')">Buketi</div>
+<div class="usluga" onclick="showSection('vijenci')">Ikebane – vijenci za sahrane</div>
+</div>
+
+<!-- O NAMA (default sekcija) -->
+<section id="onama" class="section active-section">
+<h2>O nama</h2>
+<p>Cvjećarna Flora je mala, ali posvećena cvjećarna u kojoj se svaki buket radi ručno i po želji kupca.
+Fokus nam je na svježem cvijeću, elegantnim kombinacijama i personaliziranoj usluzi za bukete,
+vjenčanja i krštenja.</p>
+</section>
+
+<section class="usluga-sekcija" id="bozicne">
+<h2>Dekoracije Božićne / Novogodišnje</h2>
+<div class="sekcija-nav">
+<button onclick="showSection('bozicne')">Božićne</button>
+<button onclick="showSection('svadbe')">Svadbe</button>
+<button onclick="showSection('krstenja')">Krštenja</button>
+<button onclick="showSection('buketi')">Buketi</button>
+<button onclick="showSection('vijenci')">Vijenci</button>
+</div>
+<div class="usluga-sadrzaj">
+<img src="img/galerija3.jpg" alt="Božićne dekoracije">
+<p>Pravimo unikatne Božićne i Novogodišnje dekoracije - aranžmane za dom, poslovne prostore,
+    izloge i svečane događaje. Svaki detalj prilagođavamo stilu kupca. </p>
+</div>
+</section>
+
+<section class="usluga-sekcija" id="svadbe">
+<h2>Dekoracije za svadbe</h2>
+<div class="sekcija-nav">
+<button onclick="showSection('bozicne')">Božićne</button>
+<button onclick="showSection('svadbe')">Svadbe</button>
+<button onclick="showSection('krstenja')">Krštenja</button>
+<button onclick="showSection('buketi')">Buketi</button>
+<button onclick="showSection('vijenci')">Vijenci</button>
+</div>
+<div class="usluga-sadrzaj">
+<img src="img/galerija2.jpg" alt="Svadbene dekoracije">
+<p>Elegantan cvjetni aranžmani za vjenčanja – stolovi, ulazi i svečani buketi.
+    Dekoracije usklađujemo s bojama, temom i ambijentom vašeg posebnog dana.
+</p>
+</div>
+</section>
+
+<section class="usluga-sekcija" id="krstenja">
+    <div class="sekcija-nav">
+<button onclick="showSection('bozicne')">Božićne</button>
+<button onclick="showSection('svadbe')">Svadbe</button>
+<button onclick="showSection('krstenja')">Krštenja</button>
+<button onclick="showSection('buketi')">Buketi</button>
+<button onclick="showSection('vijenci')">Vijenci</button>
+</div>
+<h2>Dekoracije za krštenja</h2>
+<div class="usluga-sadrzaj">
+<img src="img/galerija6.jpg" alt="Dekoracije za krštenja">
+<p>Svečani i nježni ukrasi za krštenja – cvijeće za crkvu, restorane, dječje stolove
+    i poklon - aranžmane. Poseban naglasak stavljamo na profinjen, svijetao izgled.</p>
+</div>
+</section>
+
+<section class="usluga-sekcija" id="buketi">
+<h2>Buketi za razne prigode</h2>
+<div class="sekcija-nav">
+<button onclick="showSection('bozicne')">Božićne</button>
+<button onclick="showSection('svadbe')">Svadbe</button>
+<button onclick="showSection('krstenja')">Krštenja</button>
+<button onclick="showSection('buketi')">Buketi</button>
+<button onclick="showSection('vijenci')">Vijenci</button>
+</div>
+<div class="usluga-sadrzaj">
+<img src="img/galerija5.jpg" alt="Buketi">
+<p>Buketi za rođendane, godišnjice, iznenađenja i sve druge prigode.
+    Biramo cvijeće prema vašim Željama i poruci koju Želite poslati.
+</p>
+</div>
+</section>
+
+<section class="usluga-sekcija" id="vijenci">
+<h2>Ikebane i vijenci</h2>
+<div class="sekcija-nav">
+<button onclick="showSection('bozicne')">Božićne</button>
+<button onclick="showSection('svadbe')">Svadbe</button>
+<button onclick="showSection('krstenja')">Krštenja</button>
+<button onclick="showSection('buketi')">Buketi</button>
+<button onclick="showSection('vijenci')">Vijenci</button>
+</div>
+<div class="usluga-sadrzaj">
+<img src="img/galerija1.jpg" alt="Vijenci">
+<p>Dostojanstvene ikebane i vijenci za posljednji ispraćaj. Kombiniramo diskretne boje
+    i klasične oblike, uz mogućnost personaliziranih natpisa i posebnih Želja.  
+</p>
+</div>
+</section>
+
+
+<!-- JAVASCRIPT -->
+<script>
+function showSection(id) {
+
+document.querySelectorAll('.tab-section').forEach(sec => {
+sec.classList.remove('active-section');
+});
+
+document.querySelector('#onama').classList.remove('active-section');
+
+const target = document.getElementById(id);
+if (target) {
+target.classList.add('active-section');
+target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+}
+</script>
+<footer>
+<div class="footer-container">
+
+<!-- Lokacija -->
+<div class="footer-item">
+<img src="https://img.icons8.com/ios-filled/50/b28d23/marker.png" alt="Lokacija" class="footer-icon">
+<a href="https://www.google.com/maps?q=Bosanska+47,+Fojnica" target="_blank">
+Bosanska 47, Fojnica
+</a>
+</div>
+
+<!-- Telefon -->
+<div class="footer-item">
+<img src="https://img.icons8.com/ios-filled/50/b28d23/phone.png" alt="Telefon" class="footer-icon">
+<a href="tel:+38763821249">063 821 249</a>
+</div>
+
+<!-- Instagram -->
+<div class="footer-item">
+<img src="https://img.icons8.com/ios-filled/50/b28d23/instagram-new.png" alt="Instagram" class="footer-icon">
+<a href="https://www.instagram.com/cvjecarna_flora?igsh=MWJ2aWpic3g2amwxaQ==" target="_blank">
+Instagram
+</a>
+</div>
+
+<!-- Facebook -->
+<div class="footer-item">
+<img src="https://img.icons8.com/ios-filled/50/b28d23/facebook.png" alt="Facebook" class="footer-icon">
+<a href="https://www.facebook.com/share/1MR4LwHeYk/?mibextid=wwXIfr" target="_blank">
+Facebook
+</a>
+</div>
+
+<!-- Radno vrijeme -->
+<div class="footer-item">
+<img src="https://img.icons8.com/ios-filled/50/b28d23/clock.png" alt="Radno vrijeme" class="footer-icon">
+Pon–Sub: 08:00–16:00
+</div>
+
+</div>
+</footer>
+</body>
+</html>
